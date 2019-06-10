@@ -1,0 +1,27 @@
+{
+	"entradas": {
+		"Sopa de dieta": 7.00,
+		"Alitas fritas": 8.00,
+		"Brochetas de pollo": 9.00,
+		"Tequeños": 10.00,
+		"Salchipapa": 8.00
+	},
+	"fondos": {
+		"Arroz con pollo": 15.00,
+		"Tallarines verdes": 16.00,
+		"Chicharrón de pollo": 17.00,
+		"Milanesa de pollo": 19.00
+	},
+	"postres": {
+		"Gelatina": 2.00,
+		"Flan": 1.50
+	},
+	"bebidas": {
+		"Emoliente": 6.00,
+		"Limonada": 6.00,
+		"Maracuyá": 6.00,
+		"Inca Kola": 4.00,
+		"Coca Cola": 4.00,
+		"Fanta": 3.00
+	}
+}
