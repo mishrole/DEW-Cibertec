@@ -18,8 +18,14 @@ function slider() {
 /*      Llamada jQuery      */
 // Ecmascript 6 - Fat Arrow
 $(document).ready(function() {
-    // Llamada a la función
+    // Llamada a la función Slider
     slider();
+
+    // Botones del Slider
+    $("#buttons-container").children().click(function() {
+        $("#slider-images").attr("src", "resources/img/slider/" + sliderImages[$(this).text() -1]);
+        return false;
+    });
 
     // Path almacena el nombre del archivo en el que nos encontramos
     var path = (location.pathname).split("/").pop();
