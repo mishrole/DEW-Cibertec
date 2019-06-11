@@ -1,3 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    line-height: 1.15;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+a {
+    text-decoration: none;
+    background-color: transparent;
+
+    -webkit-text-decoration-skip: objects;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu, #logo, #menu-list {
+    display: flex;
+}
+
+#menu-list > li, #logo {
+    padding: 0.5rem 0.5rem;
+}
+
+#slider-container, #slider {
+    height: 40%;
+    width: 100%;
+}
+
 #slider-images {
     height: 450px;
     width: 650px;
