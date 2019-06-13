@@ -3,22 +3,8 @@
     padding: 0;
 }
 
-html {
-    line-height: 1.15;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-}
-
-h1 {
-    font-size: 2em;
-    margin: 0.67em 0;
-}
-
 a {
     text-decoration: none;
-    background-color: transparent;
-
-    -webkit-text-decoration-skip: objects;
 }
 
 ul {
@@ -27,20 +13,130 @@ ul {
     padding: 0;
 }
 
-#menu, #logo, #menu-list {
+nav {
+    box-shadow: none;
+    background-color: transparent;
+    color: transparent;
+}
+
+nav ul a:hover {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.hidden {
+    display: none;
+}
+
+#logo {
+    top: 3px;
+    left: 50%;
+}
+
+#menu-options {
+    height: 100vh;
+    width: 0px;
+    position: fixed;
+    background: #2b2b2b;
+}
+
+#menu-options-list {
+    position: fixed;
+    top: 50px;
+    left: -100px;
+}
+
+#menu-options-list > * {
+    margin-top: 1rem;
+}
+
+#menu-social-list {
+    top: 3px;
+    right: 2%;
+}
+
+#menu, #logo, #menu-social-list {
     display: flex;
+    position: fixed;
+    color: #fff;
 }
 
-#menu-list > li, #logo {
-    padding: 0.5rem 0.5rem;
-}
-
-#slider-container, #slider {
-    height: 40%;
+#slider-container, #slider, #slider-images {
+    height: 100%;
     width: 100%;
 }
 
-#slider-images {
-    height: 450px;
-    width: 650px;
+#home, #promo, #day, #cart, #contact {
+    height: 100vh;
 }
+
+nav .brand-logo {
+    font-size: 1.8rem;
+}
+
+/****      Menu hamburguesa      ****/
+
+#hamburger-container {
+    position: fixed;
+    top: 20px;
+    left: 2%;
+}
+
+#hamburger {
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 40px;
+    z-index: 2;
+}
+
+.burger {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin-top: 8px;
+    background: #fff;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+.burger::before, .burger::after {
+    display: block;
+    position: absolute;
+    content: "";
+    z-index: -1;
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+.burger::before {
+    top: 0;
+}
+
+.burger::after {
+    top: 16px;
+}
+
+.hamburger-open .burger {
+    background: none;
+}
+
+.hamburger-open .burger::before, .hamburger-open .burger::after {
+    top: 10px;
+}
+
+.hamburger-open .burger::before {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.hamburger-open .burger::after {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/****   Fin de Menú Hamburguesa     ****/

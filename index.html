@@ -5,86 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>BIEN TAIPÁ</title>
+    <link rel="stylesheet" href="utilities/materialize/css/materialize.css">
+    <link rel="stylesheet" href="utilities/fonts/Icomoon/style.css">
     <link rel="stylesheet" href="resources/css/styles.css">
 </head>
 <body>
 
-    <div class="container">
-
-        <header>
-            <div id="home">
-                <div id="menu">
-                    <a id="logo" href="#">BIEN TAIPÁ</a>
-                    <ul id="menu-list">
-                        <li>
-                            <a href="#">Inicio</a>
-                        </li>
-                        <li>
-                            <a href="#">Promociones</a>
-                        </li>
-                        <li>
-                            <a href="#">Taipá del día</a>
-                        </li>
-                        <li>
-                            <a href="#">Pide tu Taipá</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div id="slider">
-                    <div id="slider-container">
-                        <img id="slider-images" src="resources/img/slider/slider1.jpg" alt="">
-                    </div>
-                    <div id="slider-text">
-                        <h1>¿Todavía en la oficina?</h1>
-                        <h3>Arma tu pedido y nosotros nos encargamos de llevarlo</h3>
-                    </div>
-                    <div id="buttons-container">
-                        <a href="#">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                    </div>
-                </div> 
-            </div>
-        </header>
-
-        <div id="promo">
-            <p class="h1">Promociones</p>
-            <div id="promo-container">
-                <div id="promo-surprise">
-                    <p class="title">Taipá Sorpresa</p>
-                    <img class="promo-img" src="" alt="">
-                    <p class="description"></p>
-                </div>
-                <div id="promo-candy">
-                    <p class="title">Taipá Dulce</p>
-                    <img class="promo-img" src="" alt="">
-                    <p class="description"></p>
-                </div>
-                <div id="promo-triple">
-                    <p class="title">Taipá Triple</p>
-                    <img class="promo-img" src="" alt="">
-                    <p class="description"></p>
-                </div>
-            </div>
+    <section id="home">
+        <div id="menu-options">
+            <ul id="menu-options-list">
+                <li>
+                    <a href="#home">Inicio</a>
+                </li>
+                <li>
+                    <a href="#promo">Promociones</a>
+                </li>
+                <li>
+                    <a href="#day">Taipá del Día</a>
+                </li>
+                <li>
+                    <a href="#cart">Menu</a>
+                </li>
+                <li>
+                    <a href="#contact">Contacto</a>
+                </li>
+            </ul>
         </div>
+        <nav id="menu">
+            <div id="hamburger-container">
+                <a href="#" id="hamburger">
+                    <div class="burger"></div>
+                </a>
+            </div>
+            <a id="logo" href="#" class="brand-logo center">TAIPÁ</a>
+            <ul id="menu-social-list">
+                <li>
+                    <a href="#">
+                        <span class="icon-facebook"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon-twitter"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon-youtube"></span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
 
-        <div id="day">
-            <p class="h1">Taipá del día</p>
-            <div id="day-container">
-                <img src="" alt="" class="day-img">
-                <p class="subtitle"></p>
+        <div id="slider">
+            <div id="slider-container">
+                <img id="slider-images" src="resources/img/slider/slider1.jpg" alt="">
+            </div>
+            <div id="slider-text">
+                <h1>¿Todavía en la oficina?</h1>
+                <h3>Arma tu pedido y nosotros nos encargamos de llevarlo</h3>
+            </div>
+        </div> 
+    </section>
+
+    <section id="promo">
+        <p class="h1">Promociones</p>
+        <div id="promo-container">
+            <div id="promo-surprise">
+                <p class="title">Taipá Sorpresa</p>
+                <img class="promo-img" src="" alt="">
+                <p class="description"></p>
+            </div>
+            <div id="promo-candy">
+                <p class="title">Taipá Dulce</p>
+                <img class="promo-img" src="" alt="">
+                <p class="description"></p>
+            </div>
+            <div id="promo-triple">
+                <p class="title">Taipá Triple</p>
+                <img class="promo-img" src="" alt="">
                 <p class="description"></p>
             </div>
         </div>
+    </section>
 
-        <footer>
-            <p class="title">Llámanos</p>
-            <p class="subtitle">(01)571 4526</p>
-            <p class="subtitle">987 416 532</p>
-        </footer>
+    <section id="day">
+        <p class="h1">Taipá del día</p>
+        <div id="day-container">
+            <img src="" alt="" class="day-img">
+            <p class="subtitle"></p>
+            <p class="description"></p>
+        </div>
+    </section>
 
-    </div>
+    <section id="cart">
+
+    </section>
+
+    <section id="contact">
+
+    </section>
+
+    <footer>
+        <p class="title">Llámanos</p>
+        <p class="subtitle">(01)571 4526</p>
+        <p class="subtitle">987 416 532</p>
+    </footer>
     
     <script src="utilities/jquery/jquery-3.4.1.js"></script>
     <script src="resources/js/main.js"></script>
