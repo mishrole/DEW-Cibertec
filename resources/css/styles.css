@@ -27,6 +27,22 @@ nav ul a:hover {
     display: none;
 }
 
+#home, #promo, #day, #cart, #contact {
+    height: 100vh;
+}
+
+#home {
+    background: url(../img/slider/slider1.jpg);
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
 #logo {
     top: 3px;
     left: 50%;
@@ -60,13 +76,9 @@ nav ul a:hover {
     color: #fff;
 }
 
-#slider-container, #slider, #slider-images {
+#slider {
     height: 100%;
     width: 100%;
-}
-
-#home, #promo, #day, #cart, #contact {
-    height: 100vh;
 }
 
 nav .brand-logo {
@@ -140,3 +152,18 @@ nav .brand-logo {
 }
 
 /****   Fin de Menú Hamburguesa     ****/
+
+#slider-text {
+    position: relative;
+    text-align: center;
+    color: white;
+    top: 50vh;
+}
+
+.slider-title {
+    font-size: 2.5rem;
+}
+
+.slider-subtitle {
+    font-size: 1.5rem;
+}

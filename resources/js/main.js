@@ -10,7 +10,17 @@ var url = ["https://www.facebook.com/", "https://www.twitter.com/", "https://www
 /*      Función de movimiento automático | Slider   */
 var contadorSlider = 0;
 function slider() {
-    $("#slider-images").attr("src", "resources/img/slider/" + sliderImages[contadorSlider]);
+    $("#home").css({
+        "background": "url(resources/img/slider/" + sliderImages[contadorSlider] + ")",
+        "background-size": "cover",
+        "-webkit-background-size": "cover",
+        "-moz-background-size": "cover",
+        "-o-background-size": "cover",
+        "-ms-background-size": "cover",
+        "background-repeat": "no-repeat",
+        "background-position": "center bottom",
+        "background-attachment": "fixed"
+    });
     contadorSlider++;
     if(contadorSlider >= sliderImages.length) {
         contadorSlider = 0;
@@ -138,4 +148,9 @@ $(document).ready(function() {
     }, function() {
         $(this).css("color", "#ffffff");
     })
+
+
+    // Uppercase | Título slider-text
+
+    $(".slider-title").css("text-transform", "uppercase");
 });
