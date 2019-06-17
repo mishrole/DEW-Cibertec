@@ -36,7 +36,6 @@ function scrollAnimated(section) {
 }
 
 /*      Llamada jQuery      */
-// Ecmascript 6 - Fat Arrow
 $(document).ready(function() {
 
     // Menu hamburguesa
@@ -67,35 +66,12 @@ $(document).ready(function() {
     var cart = $("#cart").offset().top
     var contact = $("#contact").offset().top
 
-    // Inicio > #home
-    menuOptionsList.eq(0).click(function() {
-       scrollAnimated(home)
-       return false;
-    });
-
-    // Promociones > #promo
-    menuOptionsList.eq(1).click(function() {
-        scrollAnimated(promo)
-        return false;
-    });
-
-    // Taipá del día > #day
-    menuOptionsList.eq(2).click(function() {
-        scrollAnimated(day)
-        return false;
-    });
-    
-    // Menu > #cart
-    menuOptionsList.eq(3).click(function() {
-        scrollAnimated(cart)
-        return false;
-    });
-
-    // Contacto > #contact
-    menuOptionsList.eq(4).click(function() {
-        scrollAnimated(contact)
-        return false;
-    });
+   $(".scroll").on("click", function(e) {
+        e.preventDefault();
+        $("html, body").animate({
+            scrollTop: $($(this).attr("href")).offset().top
+        }, 900, "linear");
+   });
 
     /****     Color de letra | Lista de opciones de Menu      ****/
 
@@ -125,6 +101,14 @@ $(document).ready(function() {
         return false;
     });
 
+    /****     Arrow Scroll Down     ****/
+
+    $("#arrow-down-slider").click(function() {
+        $("html, body").animate({
+            scrollTop: $("#promo").offset().top
+        }, 900, "linear");
+        return false;
+    });
 
     /****     Color icon | Social : hover      ****/
 

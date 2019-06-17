@@ -12,22 +12,23 @@
 <body>
 
     <section id="home">
+        <div id="overlay"></div>
         <div id="menu-options">
             <ul id="menu-options-list">
                 <li>
-                    <a href="#home">Inicio</a>
+                    <a class="scroll" href="#home">Inicio</a>
                 </li>
                 <li>
-                    <a href="#promo">Promociones</a>
+                    <a class="scroll" href="#promo">Promociones</a>
                 </li>
                 <li>
-                    <a href="#day">Taipá del Día</a>
+                    <a class="scroll" href="#day">Taipá del Día</a>
                 </li>
                 <li>
-                    <a href="#cart">Menu</a>
+                    <a class="scroll" href="#cart">Menu</a>
                 </li>
                 <li>
-                    <a href="#contact">Contacto</a>
+                    <a class="scroll" href="#contact">Contacto</a>
                 </li>
             </ul>
         </div>
@@ -56,13 +57,12 @@
                 </li>
             </ul>
         </nav>
-
         <div id="slider">
             <div id="slider-text">
                 <div class="row">
                     <div class="col s12">
                         <div class="slider-title">
-                            <p>¿Todavía en la oficina?</p>
+                            <p>¿Aún en la oficina?</p>
                         </div>
                         <div class="slider-subtitle">
                             <p>Arma tu pedido y nosotros nos encargamos de llevarlo</p>
@@ -70,11 +70,14 @@
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>
+        <div class="move-slider">
+            <span id="arrow-down-slider" class="icon-arrow-down2 arrow-down-slider"></span>
+        </div>
     </section>
 
     <section id="promo">
-        <p class="h1">Promociones</p>
+        <!--<p class="h1">Promociones</p>
         <div id="promo-container">
             <div id="promo-surprise">
                 <p class="title">Taipá Sorpresa</p>
@@ -91,20 +94,55 @@
                 <img class="promo-img" src="" alt="">
                 <p class="description"></p>
             </div>
+        </div>-->
+        <div class="row">
+            <div class="col s6">
+                    <p class="h1">Promociones</p>
+
+                    <p class="title">Taipá Sorpresa</p>
+                    <p class="subtitle"></p>
+
+                    <p class="title">Taipá Dulce</p>
+                    <p class="subtitle"></p>
+
+                    <p class="title">Taipá Triple</p>
+                    <p class="subtitle"></p>
+                </div>
+            <div class="col s6 promo-img"></div>
         </div>
     </section>
 
     <section id="day">
-        <p class="h1">Taipá del día</p>
+        <div class="row">
+            <div class="col s6 day-img"></div>
+            <div class="col s6">
+                <p class="h1">Taipá del Día</p>
+
+                <p class="title"></p>
+                <p class="subtitle"></p>
+
+                <p class="title"></p>
+                <p class="subtitle"></p>
+
+                <p class="title"></p>
+                <p class="subtitle"></p>
+            </div>
+        </div>
+        <!--<p class="h1">Taipá del día</p>
         <div id="day-container">
             <img src="" alt="" class="day-img">
             <p class="subtitle"></p>
             <p class="description"></p>
-        </div>
+        </div>-->
     </section>
 
     <section id="cart">
-
+        <div class="col 6">
+            <a href="" class="waves-effect waves-light btn">Promociones</a>
+            <a href="" class="waves-effect waves-light btn">Del día</a>
+            <a href="" class="waves-effect waves-light btn">Carta</a>
+        </div>
+        <div class="col 6"></div>
     </section>
 
     <section id="contact">

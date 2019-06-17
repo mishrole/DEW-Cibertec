@@ -31,21 +31,10 @@ nav ul a:hover {
     height: 100vh;
 }
 
-#home {
-    background: url(../img/slider/slider1.jpg);
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    -ms-background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-}
-
 #logo {
     top: 3px;
     left: 50%;
+    display: none !important;
 }
 
 #menu-options {
@@ -53,6 +42,7 @@ nav ul a:hover {
     width: 0px;
     position: fixed;
     background: #2b2b2b;
+    z-index: 1;
 }
 
 #menu-options-list {
@@ -67,13 +57,17 @@ nav ul a:hover {
 
 #menu-social-list {
     top: 3px;
-    right: 2%;
+    right: 3%;
 }
 
 #menu, #logo, #menu-social-list {
     display: flex;
     position: fixed;
     color: #fff;
+}
+
+#menu {
+    z-index: 1;
 }
 
 #slider {
@@ -85,12 +79,87 @@ nav .brand-logo {
     font-size: 1.8rem;
 }
 
+#overlay {
+    position: absolute;
+    display: block;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 0;
+}
+
+.move-slider {
+    animation: jump-arrow 2.5s infinite;
+    bottom: 2.5%;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 22px;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    z-index: 4
+}
+
+@keyframes jump-arrow {
+	0%,
+	20%,
+	55%,
+	80%,
+	100% {
+	    transform: translate3d(0, 0, 0);
+	}
+
+	40% {
+	    transform: translate3d(0, -15px, 0);
+	}
+
+	70% {
+    transform: translate3d(0, -10px, 0);
+	}
+
+	90% {
+		transform: translate3d(0, -5px, 0);
+	}
+}
+
+.move-slider .arrow-down-slider {
+    cursor: pointer;
+}
+
+.promo-img {
+    background: url("../img/section/promo1.jpg");
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100vh;
+}
+
+.day-img {
+    background: url("../img/section/day3.jpg");
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100vh;    
+}
+
 /****      Menu hamburguesa      ****/
 
 #hamburger-container {
     position: fixed;
     top: 20px;
-    left: 2%;
+    left: 3%;
 }
 
 #hamburger {
