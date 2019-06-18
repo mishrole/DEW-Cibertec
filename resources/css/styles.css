@@ -16,7 +16,8 @@ ul {
 nav {
     box-shadow: none;
     background-color: transparent;
-    color: transparent;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
 }
 
 nav ul a:hover {
@@ -41,7 +42,7 @@ nav ul a:hover {
     height: 100vh;
     width: 0px;
     position: fixed;
-    background: #2b2b2b;
+    background: #0c0c0c;
     z-index: 1;
 }
 
@@ -143,7 +144,7 @@ nav .brand-logo {
 }
 
 .day-img {
-    background: url("../img/section/day3.jpg");
+    background: url("../img/section/day4.jpg");
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -201,7 +202,7 @@ nav .brand-logo {
 }
 
 .hamburger-open .burger {
-    background: none;
+    background: none !important;
 }
 
 .hamburger-open .burger::before, .hamburger-open .burger::after {
@@ -235,4 +236,17 @@ nav .brand-logo {
 
 .slider-subtitle {
     font-size: 1.5rem;
+}
+
+/**/
+
+.h1 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin: 4em 0 2.8em 0;
+    font-weight: bolder;
+}
+
+.title {
+    font-weight: bolder;
 }
