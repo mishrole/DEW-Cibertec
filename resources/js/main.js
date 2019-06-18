@@ -153,10 +153,15 @@ $(document).scroll(function() {
     var scrollPos = $(document).scrollTop();
 
     if(scrollPos >= home && scrollPos < promo) {
+        $("nav").css("background", "");
         $("nav").css("background-color", "transparent");
     }else if(scrollPos >= promo && scrollPos < day) {
-        $("nav").css("background-color", "#0c0c0c");
+        $("nav").css({
+            "background": "linear-gradient(313deg, #0c0c0c, #1e1e1e, #323232, #0c0c0c)"
+        });
     }else if(scrollPos >= day && scrollPos < cart) {
-        $("nav").css("background-color", "#0c0c0c");
+        $("nav").css({
+            "background": "linear-gradient(313deg, #0c0c0c, #1e1e1e, #323232, #0c0c0c)"
+        });
     }
 });
