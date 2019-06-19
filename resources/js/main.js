@@ -29,10 +29,10 @@ function slider() {
 }
 
 var home = $("#home").offset().top
-var promo = $("#promo").offset().top - 50;
-var day = $("#day").offset().top - 25;
-var cart = $("#cart").offset().top - 25;
-var contact = $("#contact").offset().top - 25;
+var promo = $("#promo").offset().top - 100;
+var day = $("#day").offset().top - 100;
+var cart = $("#cart").offset().top - 100;
+var contact = $("#contact").offset().top - 100;
 
 /*      Función de Animación de Scroll al pasar de section     */
 function scrollAnimated(section) {
@@ -153,15 +153,15 @@ $(document).scroll(function() {
     var scrollPos = $(document).scrollTop();
 
     if(scrollPos >= home && scrollPos < promo) {
-        $("nav").css("background", "");
-        $("nav").css("background-color", "transparent");
+        $("nav").css("background", "transparent");
+        $("nav").css("opacity", "1");
     }else if(scrollPos >= promo && scrollPos < day) {
         $("nav").css({
-            "background": "linear-gradient(313deg, #0c0c0c, #1e1e1e, #323232, #0c0c0c)"
+            "background": "linear-gradient(91deg, #0c0c0c, #212121, #0c0c0c)"
         });
     }else if(scrollPos >= day && scrollPos < cart) {
         $("nav").css({
-            "background": "linear-gradient(313deg, #0c0c0c, #1e1e1e, #323232, #0c0c0c)"
+            "background": "linear-gradient(91deg, #0c0c0c, #212121, #0c0c0c)"
         });
     }
 });

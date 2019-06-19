@@ -15,12 +15,9 @@ ul {
 
 nav {
     box-shadow: none;
-    background-color: transparent;
+    background: transparent;
     -webkit-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
-    -webkit-animation: AnimationName 19s ease infinite;
-    -moz-animation: AnimationName 19s ease infinite;
-    animation: AnimationName 19s ease infinite;
 }
 
 nav ul a:hover {
@@ -158,6 +155,18 @@ nav .brand-logo {
     height: 100vh;    
 }
 
+.contact-img {
+    background: url("../img/section/contact.jpg");
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100vh;
+}
+
 /****      Menu hamburguesa      ****/
 
 #hamburger-container {
@@ -243,30 +252,30 @@ nav .brand-logo {
 
 /**/
 
-.h1 {
+.h1, .cart-title {
     font-size: 1.8rem;
     text-align: center;
     margin: 4em 0 2.8em 0;
+}
+
+.cart-title {
+    margin: 0;
+    padding: 4em 0 2.8em 0;
+}
+
+.h1, .cart-title, .title {
     font-weight: bolder;
 }
 
-.title {
-    font-weight: bolder;
+.input-field > label {
+    top: -25px;
 }
 
+#contact > .row {
+    margin-bottom: 0;
+}
 
-@-webkit-keyframes AnimationName {
-    0%{background-position:10% 0%}
-    50%{background-position:91% 100%}
-    100%{background-position:10% 0%}
-}
-@-moz-keyframes AnimationName {
-    0%{background-position:10% 0%}
-    50%{background-position:91% 100%}
-    100%{background-position:10% 0%}
-}
-@keyframes AnimationName { 
-    0%{background-position:10% 0%}
-    50%{background-position:91% 100%}
-    100%{background-position:10% 0%}
+.btn-contact {
+    padding: 0 5em;
+    margin-top: 2em;
 }
