@@ -255,12 +255,7 @@ nav .brand-logo {
 .h1, .cart-title {
     font-size: 1.8rem;
     text-align: center;
-    padding: 6rem 0 2.8rem 0;
-}
-
-.cart-title {
-    margin: 0;
-    padding: 6rem 0 2.8rem 0;
+    padding: 120px 0 40px 0;
 }
 
 .h1, .cart-title, .title {
@@ -276,6 +271,14 @@ nav .brand-logo {
 }
 
 .btn-contact {
-    padding: 0 5rem;
+    padding: 0 50px;
     margin-top: 2rem;
+}
+
+#products {
+    padding-top: 30px;
+}
+
+.btn-floating.halfway-fab {
+    z-index: 0;
 }

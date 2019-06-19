@@ -1,27 +1,90 @@
-{
-	"entradas": {
-		"Sopa de dieta": 7.00,
-		"Alitas fritas": 8.00,
-		"Brochetas de pollo": 9.00,
-		"Tequeños": 10.00,
-		"Salchipapa": 8.00
+{  
+	"entradas":{  
+	   "0":{  
+		  "nombre":"Guacamole especial",
+		  "precio":7.00,
+		  "imagen":""
+	   },
+	   "1":{  
+		  "nombre":"Huevos en albahaca",
+		  "precio":6.00,
+		  "imagen":""
+	   },
+	   "2":{  
+		  "nombre":"Sopa de Zapallo",
+		  "precio":8.00,
+		  "imagen":""
+	   },
+	   "3":{  
+		  "nombre":"Palta rellena",
+		  "precio":7.00,
+		  "imagen":""
+	   }
 	},
-	"fondos": {
-		"Arroz con pollo": 15.00,
-		"Tallarines verdes": 16.00,
-		"Chicharrón de pollo": 17.00,
-		"Milanesa de pollo": 19.00
+	"fondos":{  
+	   "0":{  
+		  "nombre":"Arroz con pollo",
+		  "precio":15.00,
+		  "imagen":""
+	   },
+	   "1":{  
+		  "nombre":"Tallarines Verdes con Bistec",
+		  "precio":16.00,
+		  "imagen":""
+	   },
+	   "2":{  
+		  "nombre":"Chicharrón de Pollo",
+		  "precio":17.00,
+		  "imagen":""
+	   },
+	   "3":{  
+		  "nombre":"Milanesa de Pollo",
+		  "precio":18.00,
+		  "imagen":""
+	   }
 	},
-	"postres": {
-		"Gelatina": 2.00,
-		"Flan": 1.50
+	"postres":{  
+	   "0":{  
+		  "nombre":"Galleta de almendra con chocolate",
+		  "precio":3,
+		  "imagen":""
+	   },
+	   "1":{  
+		  "nombre":"Ensalada de frutas",
+		  "precio":12,
+		  "imagen":""
+	   },
+	   "2":{  
+		  "nombre":"Cupcacke de vainilla",
+		  "precio":5,
+		  "imagen":""
+	   },
+	   "3":{  
+		  "nombre":"Waffles con miel y arándanos",
+		  "precio":10,
+		  "imagen":""
+	   }
 	},
-	"bebidas": {
-		"Emoliente": 6.00,
-		"Limonada": 6.00,
-		"Maracuyá": 6.00,
-		"Inca Kola": 4.00,
-		"Coca Cola": 4.00,
-		"Fanta": 3.00
+	"bebidas":{  
+	   "0":{  
+		  "nombre":"Chicha Morada",
+		  "precio":4.00,
+		  "imagen":""
+	   },
+	   "1":{  
+		  "nombre":"Jugo de Maracuyá",
+		  "precio":3.00,
+		  "imagen":""
+	   },
+	   "2":{  
+		  "nombre":"Inca Kola",
+		  "precio":3.00,
+		  "imagen":""
+	   },
+	   "3":{  
+		  "nombre":"Coca Cola",
+		  "precio":3.50,
+		  "imagen":""
+	   }
 	}
-}
+ }
