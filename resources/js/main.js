@@ -9,11 +9,12 @@ var url = ["https://www.facebook.com/", "https://www.twitter.com/", "https://www
 
 /*      Arreglos bidimensionales de productos       */
 var pEntradas = [["Guacamole especial", 7.00, "resources/img/products/entradas/p1-1.jpg"], ["Huevos en albahaca", 6.00, "resources/img/products/entradas/p1-2.jpg"], ["Sopa de Zapallo", 8.00, "resources/img/products/entradas/p1-3.jpg"], ["Palta fuerte rellena", 7.00, "resources/img/products/entradas/p1-4.jpg"]];
-var pFondos = [["Arroz con pollo", 15.00, ""], ["Tallarines Verdes", 16.00, ""], ["Chicharrón de pollo", 17.00, ""], ["Milanesa de pollo", 18.00, ""]];
-var pPostres = [["Galleta de almedra", 3.00, ""], ["Ensalada de frutas", 12.00, ""], ["Cupcake de vainilla", 5.00, ""], ["Waffles con arándanos", 10.00, ""]];
-var pBebidas = [["Chicha morada", 4.00, ""], ["Jugo de Maracuyá", 3.00, ""], ["Inca Kola", 3.00, ""], ["Coca Cola", 3.50, ""]];
+var pFondos = [["Tallarines al pesto", 15.00, "resources/img/products/fondos/p2-1.jpg"], ["Camarones en salsa", 16.00, "resources/img/products/fondos/p2-2.jpg"], ["Raviolis con adobo", 17.00, "resources/img/products/fondos/p2-3.jpg"], ["Salmón ahumado", 18.00, "resources/img/products/fondos/p2-4.jpg"]];
+var pPostres = [["Rosquilla glaseada", 6.00, "resources/img/products/postres/p3-1.jpg"], ["Smooth con crema", 12.00, "resources/img/products/postres/p3-2.jpg"], ["Cupcake de fresa", 5.00, "resources/img/products/postres/p3-3.jpg"], ["Waffles con miel", 10.00, "resources/img/products/postres/p3-4.jpg"]];
+var pBebidas = [["Limonada frozen", 3.00, "resources/img/products/bebidas/p4-1.jpg"], ["Jugo de Mango", 5.00, "resources/img/products/bebidas/p4-2.jpg"], ["Jugo de Granadilla", 4.50, "resources/img/products/bebidas/p4-3.jpg"], ["Jugo de Piña", 3.50, "resources/img/products/bebidas/p4-4.jpg"]];
 
 /*     Consumo de arreglos bidimensionales   */
+// Wrapper es un div donde se "pintarán" los elementos generados con la función createElements 
 var wrapper = $(".wrapper");
 
 var createElements = function(array) {
@@ -80,6 +81,45 @@ $(document).ready(function() {
         scrollTop: $($(this).attr("href")).offset().top
         }, 900, "linear");
    });
+
+   /****        Se "pintan" todas las pEntradas por defecto      ****/
+   pEntradas.forEach(function(element) {
+       wrapper.append(createElements(element))
+    });
+
+    /****      Según el botón seleccionado, se limpia el wrapper y se cargan los productos     *****/
+
+    $(".cart-buttons").find("a").eq(0).click(function() {
+        wrapper.empty();
+        pEntradas.forEach(function(element) {
+            wrapper.append(createElements(element))
+        });
+        return false;
+    });
+
+    $(".cart-buttons").find("a").eq(1).click(function() {
+        wrapper.empty();
+        pFondos.forEach(function(element) {
+            wrapper.append(createElements(element))
+        });
+        return false;
+    });
+
+    $(".cart-buttons").find("a").eq(2).click(function() {
+        wrapper.empty();
+        pPostres.forEach(function(element) {
+            wrapper.append(createElements(element))
+        });
+        return false;
+    });
+
+    $(".cart-buttons").find("a").eq(3).click(function() {
+        wrapper.empty();
+        pBebidas.forEach(function(element) {
+            wrapper.append(createElements(element))
+        });
+        return false;
+    });
 
     /****     Color de letra | Lista de opciones de Menu      ****/
 
@@ -159,10 +199,6 @@ $(document).ready(function() {
         } 
 
         return false;
-    });
-
-    pEntradas.forEach(function(element) {
-        wrapper.append(createElements(element))
     });
 
 });
