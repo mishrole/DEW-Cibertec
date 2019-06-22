@@ -7,6 +7,33 @@ for(var i = 0; i < sliderImages.length; i++) {
 /*      Arreglo de url | Social         */
 var url = ["https://www.facebook.com/", "https://www.twitter.com/", "https://www.youtube.com/"];
 
+/*      Arreglos bidimensionales de productos       */
+var pEntradas = [["Guacamole especial", 7.00, "resources/img/products/entradas/p1-1.jpg"], ["Huevos en albahaca", 6.00, "resources/img/products/entradas/p1-2.jpg"], ["Sopa de Zapallo", 8.00, "resources/img/products/entradas/p1-3.jpg"], ["Palta fuerte rellena", 7.00, "resources/img/products/entradas/p1-4.jpg"]];
+var pFondos = [["Arroz con pollo", 15.00, ""], ["Tallarines Verdes", 16.00, ""], ["Chicharrón de pollo", 17.00, ""], ["Milanesa de pollo", 18.00, ""]];
+var pPostres = [["Galleta de almedra", 3.00, ""], ["Ensalada de frutas", 12.00, ""], ["Cupcake de vainilla", 5.00, ""], ["Waffles con arándanos", 10.00, ""]];
+var pBebidas = [["Chicha morada", 4.00, ""], ["Jugo de Maracuyá", 3.00, ""], ["Inca Kola", 3.00, ""], ["Coca Cola", 3.50, ""]];
+
+/*     Consumo de arreglos bidimensionales   */
+var wrapper = $(".wrapper");
+
+var createElements = function(array) {
+
+    var colS3 = $("<div class='col s12 m6 l3'></div>");
+    var card = $("<div class='card'></div>");
+    var cardImg = $("<div class='card-image'></div>");
+    var img = $("<img src="+array[2]+">");
+
+    var content = $("<div class='card-content'>");
+    var title = $("<span class='card-title'>"+array[0]+"</span>");
+    var price = $("<p>S/. "+array[1]+"</p>");
+
+    cardImg.append(img);
+    content.append(title, price);
+    card.append(cardImg, content);
+    colS3.append(card);
+    return colS3;
+}
+
 /*      Función de movimiento automático | Slider   */
 var contadorSlider = 0;
 function slider() {
@@ -34,13 +61,6 @@ var promo = $("#promo").offset().top - 50;
 var day = $("#day").offset().top - 50;
 var cart = $("#cart").offset().top - 50;
 var contact = $("#contact").offset().top - 50;
-
-/*      Función de Animación de Scroll al pasar de section     */
-function scrollAnimated(section) {
-    $([document.documentElement, document.body]).animate({
-        scrollTop: section
-       }, 1000);
-}
 
 /*      Llamada jQuery      */
 $(document).ready(function() {
@@ -141,51 +161,9 @@ $(document).ready(function() {
         return false;
     });
 
-    /*     Consumo de data products.json   */
-    var wrapper = $(".wrapper");
-
-    var postProducts = function(type) {
-        var colS3 = $("<div class='col s3'></div>");
-        var card = $("<div class='card'></div>");
-        var cardImg = $("<div class='card-image'></div>");
-        var img = $("<img src='resources/img/products/promociones/promo-s1.jpg'>");
-        var a = $("<a class='btn-floating halfway-fab waves-effect waves-light grey darken-4'></a>");
-        var i = $("<i class='material-icons'>+</i>");
-
-        var content = $("<div class='card-content'>");
-        var title = $("<span class='card-title'>Arroz con Pollo</span>");
-        var price = $("<p>S/. 12.00</p>");
-
-        a.append(i);
-        cardImg.append(img, a);
-        content.append(title, price);
-        card.append(cardImg, content);
-        colS3.append(card);
-        return colS3;
-    }
-/*
-    var colS3 = $("<div class='col s3'></div>");
-    var card = $("<div class='card'></div>");
-    var cardImg = $("<div class='card-image'></div>");
-    var img = $("<img src='resources/img/products/promociones/promo-s1.jpg'>");
-    var a = $("<a class='btn-floating halfway-fab waves-effect waves-light grey darken-4'></a>");
-    var i = $("<i class='material-icons'>+</i>");
-
-    var content = $("<div class='card-content'>");
-    var title = $("<span class='card-title'>Arroz con Pollo</span>");
-    var price = $("<p>S/. 12.00</p>");
-
-    a.append(i);
-    cardImg.append(img, a);
-    content.append(title, price);
-    card.append(cardImg, content);
-    colS3.append(card);
-    wrapper.append(colS3);
-*/
-
-    //var p = $("<p>Mensaje desde JS</p>");
-    //products.append(p);
-
+    pEntradas.forEach(function(element) {
+        wrapper.append(createElements(element))
+    });
 
 });
 
