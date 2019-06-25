@@ -1,12 +1,3 @@
-/*     Cargar icons de Font Awesome | appendear al head    */
-(function() { 
-    var css = document.createElement('link');
-    css.href = 'https://use.fontawesome.com/releases/v5.1.0/css/all.css';
-    css.rel = 'stylesheet';
-    css.type = 'text/css';
-    document.getElementsByTagName('head')[0].appendChild(css);
-})();
-
 /*      Arreglo de imágenes | Slider    */
 var sliderImages = new Array(4);
 for(var i = 0; i < sliderImages.length; i++) {
