@@ -1,5 +1,5 @@
 /*     Cargar icons de Font Awesome | appendear al head    */
-(function() { 
+(function() {  
     var css = document.createElement('link');
     css.href = 'https://use.fontawesome.com/releases/v5.1.0/css/all.css';
     css.rel = 'stylesheet';
