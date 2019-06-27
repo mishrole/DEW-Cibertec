@@ -56,6 +56,32 @@ function slider() {
     setTimeout("slider()", 2250);
 }
 
+/*          Restricciones de sólo letras o sólo números     */
+// Letras mayúsculas y minúsculas, letra ñ, letras tildadas y sin tildar, barra espaciadora
+var letras = function(evento) {
+    var key = evento.keyCode;
+    if(((key >= 65 && key <= 90) || (key >= 97 && key <= 122))
+        || key === 241 || key === 209
+        || key === 193 || key === 201 || key === 205 || key === 211 || key === 218
+        || key === 225 || key === 233 || key === 237 || key === 243 || key === 250
+        || key === 32) {
+            return true;
+        }else {
+            evento.preventDefault();
+            return false;
+        }
+}
+// Números del 0 al 9
+var numeros = function(evento) {
+    var key = evento.keyCode;
+    if(key >= 48 && key <= 57) {
+        return true;
+    }else {
+        evento.preventDefault();
+        return false;
+    }
+}
+
 /*      Almacenando el top de cada sección       */
 var home = $("#home").offset().top
 var promo = $("#promo").offset().top - 50;
@@ -68,6 +94,10 @@ $(document).ready(function() {
 
     // Llamada a la función Slider
     slider();
+
+    // Aplicando restricción de sólo letras
+    $("#name, #lastname").keypress(letras);
+    $("#phone").keypress(numeros);
 
     /****       Scroll hacia cada sección     ****/ 
     var menuOptionsList = $("#menu-options-list a");
@@ -200,7 +230,6 @@ $(document).ready(function() {
 
         return false;
     });
-
 });
 
 /*      Efecto aplicado al nav al primer Scroll      */
