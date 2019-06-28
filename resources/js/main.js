@@ -241,6 +241,22 @@ $(document).ready(function() {
         return false;
     });
 
+    $(".btn").mouseover(function() {
+        $(this).css({
+            "background-color" : "#ffffff !important",
+            "color" : "#212121",
+            "border-color" : "#212121"
+        });
+        console.log("enter");
+    }).mouseout(function() {
+        $(this).css({
+            "background-color" : "#212121",
+            "color" : "white",
+            "border-color" : "none"
+        });
+        console.log("leave");
+    });
+
     var error =  $(".error-message");
 
     $("#name").keypress(function() {
