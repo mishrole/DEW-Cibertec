@@ -60,22 +60,34 @@ function slider() {
 // Letras mayúsculas y minúsculas, letra ñ, letras tildadas y sin tildar, barra espaciadora
 var letras = function(evento) {
     var key = evento.keyCode;
+
     if(((key >= 65 && key <= 90) || (key >= 97 && key <= 122))
         || key === 241 || key === 209
         || key === 193 || key === 201 || key === 205 || key === 211 || key === 218
         || key === 225 || key === 233 || key === 237 || key === 243 || key === 250
         || key === 32) {
             return true;
+    }else {
+        evento.preventDefault();
+        return false;
+    }
+}
+// Números del 0 al 9
+// Máximo 9 dígitos
+var numeros = function(evento) {
+    var key = evento.keyCode;
+    var phone = $("#phone").val().length;
+    var digits = 9;
+    var error =  $(".error-message");
+    
+    if(phone < digits) {
+        if(key >= 48 && key <= 57) {
+            error.eq(2).html(" ");
+            return true;
         }else {
             evento.preventDefault();
             return false;
         }
-}
-// Números del 0 al 9
-var numeros = function(evento) {
-    var key = evento.keyCode;
-    if(key >= 48 && key <= 57) {
-        return true;
     }else {
         evento.preventDefault();
         return false;
@@ -97,11 +109,11 @@ $(document).ready(function() {
 
     // Aplicando restricción de sólo letras
     $("#name, #lastname").keypress(letras);
+
+    // Aplicando restricción de sólo números con un máximo de 9 dígitos
     $("#phone").keypress(numeros);
 
     /****       Scroll hacia cada sección     ****/ 
-    var menuOptionsList = $("#menu-options-list a");
-
    $(".scroll").on("click", function(e) {
        $("#hamburger").removeClass("hamburger-open");
        $("#menu-options-list").animate({left: "-100px"});
@@ -118,7 +130,6 @@ $(document).ready(function() {
     });
 
     /****      Según el botón seleccionado, se limpia el wrapper y se cargan los productos     *****/
-
     $(".cart-buttons").find("a").eq(0).click(function() {
         wrapper.empty();
         pEntradas.forEach(function(element) {
@@ -152,7 +163,6 @@ $(document).ready(function() {
     });
 
     /****     Color de letra | Lista de opciones de Menu      ****/
-
     $("#menu-options-list").find("a").css({
         "color": "#ffffff"
     });
@@ -229,6 +239,180 @@ $(document).ready(function() {
         } 
 
         return false;
+    });
+
+    var error =  $(".error-message");
+
+    $("#name").keypress(function() {
+        error.eq(0).html(" ");
+        $("label[for='name']").css({"color" : "#26a69a"});
+        $(this).focus(function() {
+            $(this).css({
+                "border-bottom" : "1px solid #26a69a",
+                "box-shadow" : "0 1px 0 0 #26a69a"
+            });
+        });
+        $(this).focus();
+    });
+
+    $("#lastname").keypress(function() {
+        error.eq(1).html(" ");
+        $("label[for='lastname']").css({"color" : "#26a69a"});
+        $(this).focus(function() {
+            $(this).css({
+                "border-bottom" : "1px solid #26a69a",
+                "box-shadow" : "0 1px 0 0 #26a69a"
+            });
+        });
+        $(this).focus();
+    });
+
+    $("#phone").keypress(function() {
+        error.eq(2).html(" ");
+        $("label[for='phone']").css({"color" : "#26a69a"});
+        $(this).focus(function() {
+            $(this).css({
+                "border-bottom" : "1px solid #26a69a",
+                "box-shadow" : "0 1px 0 0 #26a69a"
+            });
+        });
+        $(this).focus();
+    });
+
+
+    $("#address").keypress(function() {
+        error.eq(3).html(" ");
+        $("label[for='address']").css({"color" : "#26a69a"});
+        $(this).focus(function() {
+            $(this).css({
+                "border-bottom" : "1px solid #26a69a",
+                "box-shadow" : "0 1px 0 0 #26a69a"
+            });
+        });
+        $(this).focus();
+    });
+
+    $("#message").keypress(function() {
+        error.eq(4).html(" ");
+        $("label[for='message']").css({"color" : "#26a69a"});
+        $(this).focus(function() {
+            $(this).css({
+                "border-bottom" : "1px solid #26a69a",
+                "box-shadow" : "0 1px 0 0 #26a69a"
+            });
+        });
+        $(this).focus();
+    });
+
+    $(".btn-contact").click(function() {
+        var name = $("#name").val().length;
+        var lastname = $("#lastname").val().length;
+        var phone = $("#phone").val().length;
+        var address = $("#address").val().length;
+        var message = $("#message").val().length;
+        var error =  $(".error-message");
+        //#26a69a green focused
+        //#4CAF50 green valid
+        //#F44336 red wrong
+
+        if(name == 0) {
+            error.eq(0).css({"color" : "#F44336"});
+            error.eq(0).html("Este campo es obligatorio");
+            $("label[for='name']").css({"color" : "#F44336"});
+            $("#name").focus(function() {
+                $(this).css({
+                    "border-bottom" : "1px solid #F44336",
+                    "box-shadow" : "0 1px 0 0 #F44336"
+                });
+            });
+            $("#name").focus();
+        }
+
+        if(lastname == 0) {
+            error.eq(1).css({"color" : "#F44336"});
+            error.eq(1).html("Este campo es obligatorio");
+            $("label[for='lastname']").css({"color" : "#F44336"});
+            $("#lastname").focus(function() {
+                $(this).css({
+                    "border-bottom" : "1px solid #F44336",
+                    "box-shadow" : "0 1px 0 0 #F44336"
+                });
+            });
+            $("#lastname").focus();
+        }
+
+        if(phone == 0) {
+            error.eq(2).css({"color" : "#F44336"});
+            error.eq(2).html("Este campo es obligatorio");
+            $("label[for='phone']").css({"color" : "#F44336"});
+            $("#phone").focus(function() {
+                $(this).css({
+                    "border-bottom" : "1px solid #F44336",
+                    "box-shadow" : "0 1px 0 0 #F44336"
+                });
+            });
+            $("#phone").focus();
+        }
+        
+        if(phone < 7) {
+            error.eq(2).css({"color" : "#F44336"});
+            error.eq(2).html("Ingresa un número fijo o de celular");
+            $("label[for='phone']").css({"color" : "#F44336"});
+            $("#phone").focus(function() {
+                $(this).css({
+                    "border-bottom" : "1px solid #F44336",
+                    "box-shadow" : "0 1px 0 0 #F44336"
+                });
+            });
+            $("#phone").focus();
+        }
+
+        if(phone == 8) {
+            error.eq(2).css({"color" : "#F44336"});
+            error.eq(2).html("Ingresa un número válido");
+            $("label[for='phone']").css({"color" : "#F44336"});
+            $("#phone").focus(function() {
+                $(this).css({
+                    "border-bottom" : "1px solid #F44336",
+                    "box-shadow" : "0 1px 0 0 #F44336"
+                });
+            });
+            $("#phone").focus();
+        }
+
+        if(address == 0) {
+            error.eq(3).css({"color" : "#F44336"});
+            error.eq(3).html("Este campo es obligatorio");
+            $("label[for='address']").css({"color" : "#F44336"});
+            $("#address").focus(function() {
+                $(this).css({
+                    "border-bottom" : "1px solid #F44336",
+                    "box-shadow" : "0 1px 0 0 #F44336"
+                });
+            });
+            $("#address").focus();
+        }
+
+        if(message == 0) {
+            error.eq(4).css({"color" : "#F44336"});
+            error.eq(4).html("Este campo es obligatorio");
+            $("label[for='message']").css({"color" : "#F44336"});
+            $("#message").focus(function() {
+                $(this).css({
+                    "border-bottom" : "1px solid #F44336",
+                    "box-shadow" : "0 1px 0 0 #F44336"
+                });
+            });
+            $("#message").focus();
+        }
+
+        if(name > 0 && lastname > 0 && phone > 6 && phone != 8 && address > 0 && message > 0) {
+            alert("Mensaje enviado con éxito");
+            $("#contact").find("input").val(" ");
+            $("#message").val(" ");
+            $("#name").focus();
+        }
+
     });
 });
 
