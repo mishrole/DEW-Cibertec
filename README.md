@@ -34,10 +34,18 @@ Este proceso le ayuda a obtener un conocimiento claro de lo que se debe hacer co
 
 - [X] Arquitectura | Diseña el mapa de sitio y los wireframe de alta fidelidad del sitio de forma completa
 
+![alt text](https://github.com/mishrole/DEW-Cibertec/blob/master/resources/img/readme/wireframe.jpg)
+
 - [X] Diseño de las páginas | Maneja estrucutas de bloques donde el diseño de las páginas web es compleja
 
+![alt text](https://github.com/mishrole/DEW-Cibertec/blob/master/resources/img/readme/esquema.png)
+
 - [X] Programación de eventos a objetos | Programa los eventos a los objetos, ejecuta procesos que involucra cambios en el diseño de objetos y ejecuta acciones en forma más complejas
+
+![alt text](https://github.com/mishrole/DEW-Cibertec/blob/master/resources/img/readme/carta.png)
 
 - [ ] Programación de multimedia y animaciones | Agrega y programa elementos multimedia (audio, vídeo, iframe, animaciones), controlando sus procesos de inicio y stop a través del uso de librerías
 
 - [X] Formulario de envío | Diseña el formulario, valida el ingreso de los datos y realiza el proceso de envío del mensaje en forma satisfactoria
+
+![alt text](https://github.com/mishrole/DEW-Cibertec/blob/master/resources/img/readme/formulario.png)
