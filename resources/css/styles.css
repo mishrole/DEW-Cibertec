@@ -282,3 +282,11 @@ nav .brand-logo {
 .btn-floating.halfway-fab {
     z-index: 0;
 }
+
+/*   Btn active hover   */
+
+.active-white {
+    color: #212121;
+    background-color: white !important;
+    border: 0.1px solid #212121;
+}
