@@ -18,7 +18,6 @@ var pBebidas = [["Limonada frozen", 3.00, "resources/img/products/bebidas/p4-1.j
 var wrapper = $(".wrapper");
 
 var createElements = function(array) {
-
     var colS3 = $("<div class='col s12 m6 l3'></div>");
     var card = $("<div class='card'></div>");
     var cardImg = $("<div class='card-image'></div>");
@@ -60,7 +59,6 @@ function slider() {
 // Letras mayúsculas y minúsculas, letra ñ, letras tildadas y sin tildar, barra espaciadora
 var letras = function(evento) {
     var key = evento.keyCode;
-
     if(((key >= 65 && key <= 90) || (key >= 97 && key <= 122))
         || key === 241 || key === 209
         || key === 193 || key === 201 || key === 205 || key === 211 || key === 218
@@ -103,7 +101,6 @@ var contact = $("#contact").offset().top - 50;
 
 /*      Llamada jQuery      */
 $(document).ready(function() {
-
     // Llamada a la función Slider
     slider();
 
@@ -112,6 +109,10 @@ $(document).ready(function() {
 
     // Aplicando restricción de sólo números con un máximo de 9 dígitos
     $("#phone").keypress(numeros);
+
+    // Entradas tiene .active-white al cargar la página
+    $(".cart-buttons").find("a").eq(0).removeClass("grey darken-4");
+    $(".cart-buttons").find("a").eq(0).addClass("active-white");
 
     /****       Scroll hacia cada sección     ****/ 
    $(".scroll").on("click", function(e) {
@@ -135,6 +136,14 @@ $(document).ready(function() {
         pEntradas.forEach(function(element) {
             wrapper.append(createElements(element))
         });
+        $(this).removeClass("grey darken-4");
+        $(".cart-buttons").find("a").eq(1).removeClass("active-white");
+        $(".cart-buttons").find("a").eq(2).removeClass("active-white");
+        $(".cart-buttons").find("a").eq(3).removeClass("active-white");
+        $(".cart-buttons").find("a").eq(1).addClass("grey darken-4");
+        $(".cart-buttons").find("a").eq(2).addClass("grey darken-4");
+        $(".cart-buttons").find("a").eq(3).addClass("grey darken-4");
+        $(this).addClass("active-white");
         return false;
     });
 
@@ -143,6 +152,14 @@ $(document).ready(function() {
         pFondos.forEach(function(element) {
             wrapper.append(createElements(element))
         });
+        $(this).removeClass("grey darken-4");
+        $(".cart-buttons").find("a").eq(0).removeClass("active-white");
+        $(".cart-buttons").find("a").eq(2).removeClass("active-white");
+        $(".cart-buttons").find("a").eq(3).removeClass("active-white");
+        $(".cart-buttons").find("a").eq(0).addClass("grey darken-4");
+        $(".cart-buttons").find("a").eq(2).addClass("grey darken-4");
+        $(".cart-buttons").find("a").eq(3).addClass("grey darken-4");
+        $(this).addClass("active-white");
         return false;
     });
 
@@ -151,6 +168,14 @@ $(document).ready(function() {
         pPostres.forEach(function(element) {
             wrapper.append(createElements(element))
         });
+        $(this).removeClass("grey darken-4");
+        $(".cart-buttons").find("a").eq(0).removeClass("active-white");
+        $(".cart-buttons").find("a").eq(1).removeClass("active-white");
+        $(".cart-buttons").find("a").eq(3).removeClass("active-white");
+        $(".cart-buttons").find("a").eq(0).addClass("grey darken-4");
+        $(".cart-buttons").find("a").eq(1).addClass("grey darken-4");
+        $(".cart-buttons").find("a").eq(3).addClass("grey darken-4");
+        $(this).addClass("active-white");
         return false;
     });
 
@@ -159,7 +184,25 @@ $(document).ready(function() {
         pBebidas.forEach(function(element) {
             wrapper.append(createElements(element))
         });
+        $(this).removeClass("grey darken-4");
+        $(".cart-buttons").find("a").eq(0).removeClass("active-white");
+        $(".cart-buttons").find("a").eq(1).removeClass("active-white");
+        $(".cart-buttons").find("a").eq(2).removeClass("active-white");
+        $(".cart-buttons").find("a").eq(0).addClass("grey darken-4");
+        $(".cart-buttons").find("a").eq(1).addClass("grey darken-4");
+        $(".cart-buttons").find("a").eq(2).addClass("grey darken-4");
+        $(this).addClass("active-white");
         return false;
+    });
+
+    $(".btn-contact").mouseover(function() {
+        $(this).removeClass("grey darken-4");
+        $(this).addClass("active-white");
+        console.log("in")
+    }).mouseout(function() {
+        $(this).removeClass("active-white");
+        $(this).addClass("grey darken-4");
+        console.log("out")
     });
 
     /****     Color de letra | Lista de opciones de Menu      ****/
@@ -239,22 +282,6 @@ $(document).ready(function() {
         } 
 
         return false;
-    });
-
-    $(".btn").mouseover(function() {
-        $(this).css({
-            "background-color" : "#ffffff !important",
-            "color" : "#212121",
-            "border-color" : "#212121"
-        });
-        console.log("enter");
-    }).mouseout(function() {
-        $(this).css({
-            "background-color" : "#212121",
-            "color" : "white",
-            "border-color" : "none"
-        });
-        console.log("leave");
     });
 
     var error =  $(".error-message");
@@ -436,7 +463,6 @@ $(document).ready(function() {
 // Al pasar de #Home a #Promo, el nav debe cambiar a modo oscuro y se mantiene el efecto en las siguientes secciones
 // Implementación final en Proceso
 $(document).scroll(function() {
-
     var scrollPos = $(document).scrollTop();
 
     if(scrollPos >= home && scrollPos < promo) {
