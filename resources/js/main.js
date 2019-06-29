@@ -131,6 +131,10 @@ $(document).ready(function() {
     });
 
     /****      Según el botón seleccionado, se limpia el wrapper y se cargan los productos     *****/
+        /*  Además, se cambia el color del botón seleccionado para indicar qué productos están listados
+            - Se remueve la clase active-white de todos los elementos que no sean $(this)
+            - Se añade la clase grey-darken a todos los elementos que no sean $(this)
+            - Se añade la clase active-white al $(this) */
     $(".cart-buttons").find("a").eq(0).click(function() {
         wrapper.empty();
         pEntradas.forEach(function(element) {
@@ -195,6 +199,7 @@ $(document).ready(function() {
         return false;
     });
 
+    /****      Al pasar el mouse sobre el botón ENVIAR, cambia el color     *****/
     $(".btn-contact").mouseover(function() {
         $(this).removeClass("grey darken-4");
         $(this).addClass("active-white");
@@ -284,6 +289,7 @@ $(document).ready(function() {
         return false;
     });
 
+    /****      Cambio de colores según las validaciones del formulario     *****/
     var error =  $(".error-message");
 
     $("#name").keypress(function() {

@@ -40,4 +40,4 @@ Este proceso le ayuda a obtener un conocimiento claro de lo que se debe hacer co
 
 - [ ] Programación de multimedia y animaciones | Agrega y programa elementos multimedia (audio, vídeo, iframe, animaciones), controlando sus procesos de inicio y stop a través del uso de librerías
 
-- [ ] Formulario de envío | Diseña el formulario, valida el ingreso de los datos y realiza el proceso de envío del mensaje en forma satisfactoria
+- [X] Formulario de envío | Diseña el formulario, valida el ingreso de los datos y realiza el proceso de envío del mensaje en forma satisfactoria
