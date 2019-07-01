@@ -9,7 +9,7 @@ var url = ["https://www.facebook.com/", "https://www.twitter.com/", "https://www
 
 /*      Arreglos bidimensionales de productos       */
 var pEntradas = [["Guacamole dúo", 7.00, "resources/img/products/entradas/p1-1.jpg"], ["Saltado de papa", 6.00, "resources/img/products/entradas/p1-2.jpg"], ["Sopa de Zapallo", 8.00, "resources/img/products/entradas/p1-3.jpg"], ["Paltas rellenas", 7.00, "resources/img/products/entradas/p1-4.jpg"]];
-var pFondos = [["Tallarines al pesto", 15.00, "resources/img/products/fondos/p2-1.jpg"], ["Camarones en salsa", 16.00, "resources/img/products/fondos/p2-2.jpg"], ["Raviolis con adobo", 17.00, "resources/img/products/fondos/p2-3.jpg"], ["Salmón ahumado", 18.00, "resources/img/products/fondos/p2-4.jpg"]];
+var pFondos = [["Tallarines al pesto", 15.00, "resources/img/products/fondos/p2-1.jpg"], ["Camarones en salsa", 16.00, "resources/img/products/fondos/p2-2.jpg"], ["Raviolis en adobo", 17.00, "resources/img/products/fondos/p2-3.jpg"], ["Salmón ahumado", 18.00, "resources/img/products/fondos/p2-4.jpg"]];
 var pPostres = [["Rosquilla glaseada", 6.00, "resources/img/products/postres/p3-1.jpg"], ["Smooth con crema", 12.00, "resources/img/products/postres/p3-2.jpg"], ["Cupcake de fresa", 5.00, "resources/img/products/postres/p3-3.jpg"], ["Waffles con bayas", 10.00, "resources/img/products/postres/p3-4.jpg"]];
 var pBebidas = [["Limonada frozen", 3.00, "resources/img/products/bebidas/p4-1.jpg"], ["Jugo de mango", 5.00, "resources/img/products/bebidas/p4-2.jpg"], ["Jugo de granada", 4.50, "resources/img/products/bebidas/p4-3.jpg"], ["Jugo de piña", 3.50, "resources/img/products/bebidas/p4-4.jpg"]];
 
