@@ -4,6 +4,11 @@ for(var i = 0; i < sliderImages.length; i++) {
     sliderImages[i] = "slider" + (i+1) + ".jpg";
 }
 
+var miniSlider = new Array (4);
+for(var i = 0; i < miniSlider.length; i++) {
+    miniSlider[i] = "mini" + (i+1) + ".jpg";
+}
+
 /*      Arreglo de url | Social         */
 var url = ["https://www.facebook.com/", "https://www.twitter.com/", "https://www.youtube.com/"];
 
@@ -36,6 +41,7 @@ var createElements = function(array) {
 
 /*      Función de movimiento automático | Slider   */
 var contadorSlider = 0;
+var rotacionSlider;
 function slider() {
     $("#home").css({
         "background": "url(resources/img/slider/" + sliderImages[contadorSlider] + ")",
@@ -52,7 +58,34 @@ function slider() {
     if(contadorSlider >= sliderImages.length) {
         contadorSlider = 0;
     }
-    setTimeout("slider()", 2250);
+    rotacionSlider = setTimeout(function() {
+		slider();
+	}, 2250);
+    //setTimeout("slider()", 2250);
+}
+
+var contadorMini = 0;
+var rotacionMini;
+function mini() {
+    $("#mini-slider").css({
+        "background": "url(resources/img/mini/" + miniSlider[contadorMini] + ")",
+        "background-size": "cover",
+        "-webkit-background-size": "cover",
+        "-moz-background-size": "cover",
+        "-o-background-size": "cover",
+        "-ms-background-size": "cover",
+        "background-repeat": "no-repeat",
+        "background-position": "center top",
+        "background-attachment": "fixed"
+    });
+    contadorMini++;
+    if(contadorMini >= miniSlider.length) {
+        contadorMini = 0;
+    }
+    rotacionMini = setTimeout(function() {
+		mini();
+	}, 3000);
+    //setTimeout("mini()", 3000);
 }
 
 /*          Restricciones de sólo letras o sólo números     */
@@ -103,6 +136,7 @@ var contact = $("#contact").offset().top - 50;
 $(document).ready(function() {
     // Llamada a la función Slider
     slider();
+    mini();
 
     // Aplicando restricción de sólo letras
     $("#name, #lastname").keypress(letras);
@@ -353,6 +387,26 @@ $(document).ready(function() {
         $(this).focus();
     });
 
+    $(".btn-confirm").click(function() {
+        $(".modal").css({
+            "display": "none"
+        });
+        return false;
+    });
+
+    $("#mini-play").click(function() {
+        clearTimeout(rotacionMini);
+        rotacionMini = setTimeout(function() {
+            mini();
+        }, 3000);
+        return false;
+    });
+
+    $("#mini-pause").click(function() {
+        clearTimeout(rotacionMini);
+        return false;
+    });
+
     $(".btn-contact").click(function() {
         var name = $("#name").val().length;
         var lastname = $("#lastname").val().length;
@@ -456,7 +510,9 @@ $(document).ready(function() {
         }
 
         if(name > 0 && lastname > 0 && phone > 6 && phone != 8 && address > 0 && message > 0) {
-            alert("Mensaje enviado con éxito");
+            $('.modal').css({
+                "display": "block"
+            });
             $("#contact").find("input").val(" ");
             $("#message").val(" ");
             $("#name").focus();

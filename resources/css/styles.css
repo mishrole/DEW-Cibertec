@@ -290,3 +290,32 @@ nav .brand-logo {
     background-color: white !important;
     border: 0.1px solid #212121;
 }
+
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 17%;
+    background-color: #fafafa;
+    padding: 0;
+    max-height: 70%;
+    width: 55%;
+    margin: auto;
+    overflow-y: auto;
+    border-radius: 2px;
+    will-change: top, opacity;
+}
+
+#mini-slider {
+    margin-bottom: 1em;
+    height: 320px;
+}
+
+.modal-content {
+    text-align: center;
+}
+
+.mini-options > a{
+    color: #2b2b2b;
+}
